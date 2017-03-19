@@ -1,17 +1,20 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Taskr</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Taskr</title>
+  <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
 
-  <body>
-  <%= render 'layouts/navbar' %>
-  <div class = 'container'>
-    <%= yield %>
-  </div>
-  </body>
+<body>
+<%= render 'layouts/navbar' %>
+<% flash.each do |name, msg| %>
+    <%= msg %>
+<% end %>
+<div class='container'>
+  <%= yield %>
+</div>
+</body>
 </html>

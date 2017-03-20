@@ -1,41 +1,21 @@
-<h2>To Do</h2>
 <p>
   <%= link_to 'New Task', new_task_path %>
 </p>
-<table>
-  <tr>
-    <th> Content</th>
-    <th> State</th>
-    <th colspan="4"></th>
-  </tr>
 
-  <% @to_do.each do |task| %>
-      <%= render @to_do %>
-  <% end %>
-</table>
+<div class='row'>
+  <div class='col-md-4'>
+    <h1 class='text-center'> To Do </h1>
+    <%= render @to_do %>
+  </div>
 
-<h2>In Progress</h2>
-<table>
-  <tr>
-    <th> Content</th>
-    <th> State</th>
-    <th colspan="5"></th>
-  </tr>
+  <div class='col-md-4'>
+    <h1 class='text-center'> In Progress </h1>
+    <%= render @in_progress %>
+  </div>
 
-  <% @in_progress.each do |task| %>
-      <%= render @in_progress %>
-  <% end %>
-</table>
+  <div class='col-md-4'>
+    <h1 class='text-center'> Complete </h1>
+    <%= render @complete %>
+  </div>
 
-<h2>Complete</h2>
-<table>
-  <tr>
-    <th> Content</th>
-    <th> State</th>
-    <th colspan="4"></th>
-  </tr>
-
-  <% @complete.each do |task| %>
-      <%= render @complete %>
-  <% end %>
-</table>
+</div>

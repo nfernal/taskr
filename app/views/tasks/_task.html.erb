@@ -1,33 +1,12 @@
-<!--
-
-<tr>
-  <td><%= task.content %></td>
-  <td><%= task.state %></td>
-  <td><%= link_to 'Show', task_path(task) %></td>
-  <td><%= link_to 'Edit', edit_task_path(task) %></td>
-  <td><%= link_to 'Delete', task_path(task), method: :delete, data: {
-    confirm: "Are you sure you want to delete this task?"} %></td>
-  <% if task.state == 'in_progress' %>
-      <td><%= link_to 'Mark as To Do', change_task_path(task, state: "to_do"), method: :put %></td>
-      <td><%= link_to 'Mark as Complete', change_task_path(task, state: "complete"), method: :put %></td>
-  <% else %>
-      <td><%= link_to 'Mark as In Progress', change_task_path(task, state: "in_progress"), method: :put %></td>
-  <% end %>
-</tr>
-
--->
-
-
-
 <div class='panel panel-info'>
   <div class='panel-heading'><%= link_to edit_task_path(task) do %>
 
         Created: <%= time_ago_in_words(task.created_at) %>
-        <% end %>
+    <% end %>
 
     <%= link_to 'X', task_path(task), method: :delete, data: {confirm: 'Are you sure?'}, class: 'pull-right' %>
-        </div>
-  <div class='panel-body'><%= task.content %></div>
+  </div>
+  <div class='panel-body'><%= raw(task.content_html) %></div>
   <div class='panel-footer'>
     <div class="btn-group btn-group-justified">
       <% if task.state == 'in_progress' %>
@@ -45,6 +24,3 @@
     </div>
   </div>
 </div>
-
-
-

@@ -8,6 +8,9 @@
 <% end %>
 <%= simple_form_for @task do |f| %>
     <%= f.input :content %>
+
+    <%= f.input :state %>
+
     <%= f.submit :submit %>
 <% end %>
 
